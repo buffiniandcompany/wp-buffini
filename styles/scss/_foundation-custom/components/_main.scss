@@ -1,0 +1,44 @@
+@import '../settings';
+
+/*-----------------------------------------------------------*\
+ MAIN CONTENT
+\*-----------------------------------------------------------*/
+
+.section {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	.cell {
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+.section-feature {
+	.section-feature-text {
+		max-width: 700px;
+		margin: auto;
+		padding: 40px 20px;
+		@include breakpoint(medium) {
+			padding: 60px;
+		}		
+		@include breakpoint(large) {
+			padding: 160px 80px;
+		}
+	}
+	.section-feature-image {
+		background-size: cover;
+		@include breakpoint(medium down) {
+			min-height: 300px;
+		}
+	}
+}
+
+.section-grid {
+	background-size:cover;
+	.cell {
+		min-height:200px;
+		background-size:cover;
+	}
+}

@@ -1,0 +1,27 @@
+
+// IE Fix: Bicubic Scaling for Images
+img { -ms-interpolation-mode: bicubic; }
+
+
+// Social
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.icon-social {
+  background: #aaa;
+	fill:#fff;
+  border-radius: 100%;
+  width: 32px;
+  display: inline-block;
+  margin-left:0;
+	height: 32px;
+  text-align: center;
+  line-height: 32px;
+	transition: all 0.3s ease-in-out;
+	@include breakpoint(small only) {
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+	}
+	&:hover {
+		background:#0078dd;
+	}
+}

@@ -1,0 +1,133 @@
+/**
+ * Foundation for Sites by ZURB
+ * Version 6.4.1
+ * foundation.zurb.com
+ * Licensed under MIT Open Source
+ */
+
+// Dependencies
+@import '../_vendor/normalize-scss/sass/normalize';
+@import '../_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import '../_vendor/sassy-lists/stylesheets/helpers/true';
+@import '../_vendor/sassy-lists/stylesheets/functions/purge';
+@import '../_vendor/sassy-lists/stylesheets/functions/remove';
+@import '../_vendor/sassy-lists/stylesheets/functions/replace';
+@import '../_vendor/sassy-lists/stylesheets/functions/to-list';
+
+// Settings
+// import your own `settings` here or
+@import 'settings';
+// import and modify the default settings through
+//@import 'settings/settings';
+
+// Sass utilities
+@import '../_foundation-default/util/util';
+
+// Global variables and styles
+@import '../_foundation-default/global';
+
+// Components
+@import '../_foundation-default/grid/grid';
+@import '../_foundation-default/xy-grid/xy-grid';
+@import '../_foundation-default/typography/typography';
+@import '../_foundation-default/forms/forms';
+@import '../_foundation-default/components/visibility';
+@import '../_foundation-default/components/float';
+@import '../_foundation-default/components/button';
+@import '../_foundation-default/components/button-group';
+@import '../_foundation-default/components/accordion-menu';
+@import '../_foundation-default/components/accordion';
+@import '../_foundation-default/components/badge';
+@import '../_foundation-default/components/breadcrumbs';
+@import '../_foundation-default/components/callout';
+@import '../_foundation-default/components/card';
+@import '../_foundation-default/components/close-button';
+@import '../_foundation-default/components/drilldown';
+@import '../_foundation-default/components/dropdown-menu';
+@import '../_foundation-default/components/dropdown';
+@import '../_foundation-default/components/flex';
+@import '../_foundation-default/components/responsive-embed';
+@import '../_foundation-default/components/label';
+@import '../_foundation-default/components/media-object';
+@import '../_foundation-default/components/menu';
+@import '../_foundation-default/components/menu-icon';
+@import '../_foundation-default/components/off-canvas';
+@import '../_foundation-default/components/orbit';
+@import '../_foundation-default/components/pagination';
+@import '../_foundation-default/components/progress-bar';
+@import '../_foundation-default/components/reveal';
+@import '../_foundation-default/components/slider';
+@import '../_foundation-default/components/sticky';
+@import '../_foundation-default/components/switch';
+@import '../_foundation-default/components/table';
+@import '../_foundation-default/components/tabs';
+@import '../_foundation-default/components/title-bar';
+@import '../_foundation-default/components/top-bar';
+@import '../_foundation-default/components/thumbnail';
+@import '../_foundation-default/components/tooltip';
+@import '../_foundation-default/prototype/prototype';
+
+@mixin foundation-everything(
+  $flex: true,
+  $prototype: false
+) {
+  @if $flex {
+    $global-flexbox: true !global;
+  }
+
+  @include foundation-global-styles;
+  @if not $flex {
+    @include foundation-grid;
+  }
+  @else {
+    @if $xy-grid {
+      @include foundation-xy-grid-classes;
+    }
+    @else {
+      @include foundation-flex-grid;
+    }
+  }
+  @include foundation-typography;
+  @include foundation-forms;
+  @include foundation-button;
+  @include foundation-accordion;
+  @include foundation-accordion-menu;
+  @include foundation-badge;
+  @include foundation-breadcrumbs;
+  @include foundation-button-group;
+  @include foundation-callout;
+  @include foundation-card;
+  @include foundation-close-button;
+  @include foundation-menu;
+  @include foundation-menu-icon;
+  @include foundation-drilldown-menu;
+  @include foundation-dropdown;
+  @include foundation-dropdown-menu;
+  @include foundation-responsive-embed;
+  @include foundation-label;
+  @include foundation-media-object;
+  @include foundation-off-canvas;
+  @include foundation-orbit;
+  @include foundation-pagination;
+  @include foundation-progress-bar;
+  @include foundation-slider;
+  @include foundation-sticky;
+  @include foundation-reveal;
+  @include foundation-switch;
+  @include foundation-table;
+  @include foundation-tabs;
+  @include foundation-thumbnail;
+  @include foundation-title-bar;
+  @include foundation-tooltip;
+  @include foundation-top-bar;
+  @include foundation-visibility-classes;
+  @include foundation-float-classes;
+
+  @if $flex {
+    @include foundation-flex-classes;
+  }
+
+  @if $prototype {
+    @include foundation-prototype-classes;
+  }
+}

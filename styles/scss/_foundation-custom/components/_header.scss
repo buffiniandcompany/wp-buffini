@@ -1,0 +1,101 @@
+@import '../settings';
+ 
+/*-----------------------------------------------------------*\
+ Header - Base Styles
+\*-----------------------------------------------------------*/
+
+.header {
+	position:relative;
+	padding-top:200px;
+	padding-bottom:200px;
+	text-align:center;
+	color:#fff;
+	background-size:cover;
+	background-repeat: no-repeat;
+}
+
+.header-xsmall {
+	padding-left:200px;
+	padding-top:30px;
+	padding-bottom:30px;
+	text-align:left;
+}
+
+.header-small {
+	padding-top:100px;
+	padding-bottom:100px;
+}
+
+.header-medium {
+	padding-top:300px;
+	padding-bottom:300px;
+}
+
+.header-large {
+	padding-top:400px;
+	padding-bottom:400px;
+}
+
+.header-full {
+	height:100vmin;
+	min-height:900px;
+}
+
+@include breakpoint(small only) {
+	.header {
+		padding-top:100px;
+		padding-bottom:100px;
+	}
+
+	.header-xsmall {
+		padding:40px 0;
+		text-align:center;
+	}
+
+	.header-small {
+		padding-top:50px;
+		padding-bottom:50px;
+	}
+
+	.header-medium {
+		padding-top:150px;
+		padding-bottom:150px;
+	}
+
+	.header-large {
+		padding-top:200px;
+		padding-bottom:200px;
+	}
+
+	.header-full {
+		padding-top:100px;
+		padding-bottom:100px;
+		min-height:auto;
+	}
+}
+
+
+/*-----------------------------------------------------------*\
+ Headers - Category / Taxonomy Pages
+\*-----------------------------------------------------------*/
+.category .header {
+	background: #174071;
+	background: linear-gradient(270deg,#174071 0,#3498db);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.tax-stories_category .header {
+	background: #174071;
+	background: linear-gradient(270deg,#174071 0,#3498db);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.tax-resources_category .header {
+	background: #0096a9;
+	background: linear-gradient(270deg,#0096a9,#01e7d4);
+}
+
+.tax-press_category .header {
+	background: #6a0a3b;
+	background: linear-gradient(270deg, #6a0a3b 0, #d1025a);
+}

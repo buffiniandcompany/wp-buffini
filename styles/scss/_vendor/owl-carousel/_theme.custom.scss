@@ -1,0 +1,99 @@
+﻿/*
+ * 	Custom Theme for Owl Carousel
+ */
+
+ // Prevent flash of unloaded content
+
+.owl-carousel {
+  opacity:0;
+}
+
+.owl-loaded {
+  opacity:1;
+  transition:opacity 0.3s ease-in;
+}
+
+.owl-nav {
+  margin-top:30px;
+}
+
+// Next + Previous Buttons
+.owl-prev, .owl-next {
+  position: absolute;
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: auto;
+  bottom: -15px;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  z-index: 20;
+  &:before {
+    display: block;
+    width: 15px;
+    height: 30px;
+    opacity: 1;
+  }
+  &.disabled {
+    &:before {
+      opacity: .5;
+    }
+  }
+}
+
+.owl-prev {
+  right: auto;
+  left: 0;
+  &:before {
+    content: '';
+    background: url(../../images/icons/arrow-left-outlined-gray.png) center center no-repeat;
+    background-size: 15px 30px;
+  }
+}
+
+.owl-next {
+  right: 0;
+  left: auto;
+  &:before {
+    content: '';
+    background: url(../../images/icons/arrow-right-outlined-gray.png) center center no-repeat;
+    background-size: 15px 30px;
+  }
+}
+
+.owl-nav.disabled + .owl-dots {
+	margin-top: 10px;
+}
+
+.owl-dots {
+	text-align: center;
+	-webkit-tap-highlight-color: transparent;
+	.owl-dot {
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+		span {
+			width: 10px;
+			height: 10px;
+			margin: 5px 7px;
+			background: #ddd;
+			display: block;
+			-webkit-backface-visibility: visible;
+			transition: opacity 200ms ease;
+			border-radius: 30px;
+		}
+		&.active,
+		&:hover {
+			span {
+				background: #999;
+			}
+		}
+	}
+}

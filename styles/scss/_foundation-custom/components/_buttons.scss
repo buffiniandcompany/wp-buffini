@@ -1,0 +1,124 @@
+$aluminum: #999999;
+$burgundy: #6A0A3B;
+$cobalt: #1d508d;
+$mint: #00cf88;
+$navy: #142b44;
+$ruby: #d1025a;
+$saphire: #0060b1;
+$sky: #3498db;
+$tangerine: #F36B21;
+$tomato: #f04437;
+
+
+//Solid Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.button {
+  &.navy {@include button-style($navy, auto, $white);}
+  &.cobalt {@include button-style($cobalt, auto, $white);}
+  &.saphire {@include button-style($saphire, auto, $white);}
+  &.sky {@include button-style($sky, auto, $white);}
+  &.mint {@include button-style($mint, auto, $white);}
+  &.tomato {@include button-style($tomato, auto, $white);}
+  &.ruby {@include button-style($ruby, auto, $white);}
+  &.burgundy {@include button-style($burgundy, auto, $white);}
+  &.tangerine {@include button-style($tangerine, auto, $white);}    
+  &.aluminum {@include button-style($aluminum, auto, auto);}
+  &.white {@include button-style($white, auto, auto);}
+}
+
+//Hollow Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+.button.hollow {
+  background:transparent;
+  &:hover {
+    background:transparent;
+  }
+  &.navy {
+    color:$navy;
+    border-color:$navy;
+    &:hover {
+      color: scale-color($navy, $lightness: -15%);
+      border-color: scale-color($navy, $lightness: -15%);
+    }
+  }
+  &.cobalt {
+    color:$cobalt;
+    border-color:$cobalt;
+    &:hover {
+      color: scale-color($cobalt, $lightness: -15%);
+      border-color: scale-color($cobalt, $lightness: -15%);
+    }
+  }
+  &.saphire {
+    color:$saphire;
+    border-color:$saphire;
+    &:hover {
+      color: scale-color($saphire, $lightness: -15%);
+      border-color: scale-color($saphire, $lightness: -15%);
+    }
+  }
+  &.sky {
+    color:$sky;
+    border-color:$sky;
+    &:hover {
+      color: scale-color($sky, $lightness: -15%);
+      border-color: scale-color($sky, $lightness: -15%);
+    }
+  }
+  &.mint {
+    color:$mint;
+    border-color:$mint;
+    &:hover {
+      color: scale-color($mint, $lightness: -15%);
+      border-color: scale-color($mint, $lightness: -15%);
+    }
+  }
+  &.tomato {
+    color:$tomato;
+    border-color:$tomato;
+    &:hover {
+      color: scale-color($tomato, $lightness: -15%);
+      border-color: scale-color($tomato, $lightness: -15%);
+    }
+  }
+  &.ruby {
+    color:$ruby;
+    border-color:$ruby;
+    &:hover {
+      color: scale-color($ruby, $lightness: -15%);
+      border-color: scale-color($ruby, $lightness: -15%);
+    }
+  }
+  &.burgundy {
+    color:$burgundy;
+    border-color:$burgundy;
+    &:hover {
+      color: scale-color($burgundy, $lightness: -15%);
+      border-color: scale-color($burgundy, $lightness: -15%);
+    }
+  }
+  &.tangerine {
+    color:$tangerine;
+    border-color:$tangerine;
+    &:hover {
+      color: scale-color($tangerine, $lightness: -15%);
+      border-color: scale-color($tangerine, $lightness: -15%);
+    }
+  }      
+  &.aluminum {
+    color:$aluminum;
+    border-color:$aluminum;
+    &:hover {
+      color: scale-color($aluminum, $lightness: -15%);
+      border-color: scale-color($aluminum, $lightness: -15%);
+    }
+  }
+  &.white {
+    color:$white;
+    border-color:$white;
+    &:hover {
+      color: scale-color($white, $lightness: -15%);
+      border-color: scale-color($white, $lightness: -15%);
+    }
+  }  
+}

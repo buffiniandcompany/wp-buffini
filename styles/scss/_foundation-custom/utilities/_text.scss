@@ -1,0 +1,133 @@
+@import '../settings';
+
+// TEXT SIZE
+.text-large {
+	font-size:2.5rem;
+	line-height:1.1;
+	@include breakpoint(medium) {
+		font-size:3.5rem;
+	}
+}
+
+.text-xlarge {
+	font-size:2rem;
+	line-height:1.1;
+	@include breakpoint(medium) {
+		font-size:4rem;
+	}
+}
+
+// TEXT CASE
+.text-upper {
+	text-transform:uppercase;
+}
+
+// TEXT WEIGHT
+.text-bold {
+	font-weight:700;
+}
+
+.text-thin {
+	font-weight:300;
+}
+
+// TEXT COLOR - LIGHT
+
+.text-light-10 {
+  color:rgba(255, 255, 255, 0.1);
+}
+
+.text-light-20 {
+  color:rgba(255, 255, 255, 0.2);
+}
+
+.text-light-30 {
+  color:rgba(255, 255, 255, 0.3);
+}
+
+.text-light-40 {
+  color:rgba(255, 255, 255, 0.4);
+}
+
+.text-light-50 {
+  color:rgba(255, 255, 255, 0.5);
+}
+
+.text-light-60 {
+  color:rgba(255, 255, 255, 0.6);
+}
+
+.text-light-70 {
+  color:rgba(255, 255, 255, 0.7);
+}
+
+.text-light-80 {
+  color:rgba(255, 255, 255, 0.8);
+}
+
+.text-light-90 {
+  color:rgba(255, 255, 255, 0.9);
+}
+
+.text-light-100 {
+  color:rgba(255, 255, 255, 1.0);
+}
+
+.text-light {
+  color:rgba(255, 255, 255, 1.0);
+	a {
+	  color:rgba(255, 255, 255, 0.6);
+		transition:all 0.3 ease-in-out;
+		&:hover, &:focus {
+			color:rgba(255, 255, 255, 1.0);
+			outline:0;
+			transition:all 0.3 ease-in-out;
+		}
+	}	
+}
+
+.link-light {
+  color:rgba(255, 255, 255, 0.85);
+  transition:all 0.3 ease-in-out;
+  &:hover, &:focus {
+		outline:0;
+		color:rgba(255, 255, 255, 1.0);
+  }
+	a {
+	  color:rgba(255, 255, 255, 0.85);
+		transition:all 0.3 ease-in-out;
+		&:hover, &:focus {
+			color:rgba(255, 255, 255, 1.0);
+			outline:0;
+		}
+	}
+}
+
+// TEXT COLOR - DARK
+.text-dark-50 {
+	color:rgba(0, 0, 0, 0.5);
+}
+
+.text-dark-60 {
+	color:rgba(0, 0, 0, 0.6);
+}
+
+.text-dark-70 {
+	color:rgba(0, 0, 0, 0.6);
+}
+
+.text-dark-80 {
+	color:rgba(0, 0, 0, 0.6);
+}
+
+.text-dark-90 {
+	color:rgba(0, 0, 0, 0.6);
+}
+
+.text-dark-100 {
+	color:rgba(0, 0, 0, 1.0);
+}
+
+.text-dark {
+	color:rgba(0, 0, 0, 1.0);
+}
