@@ -3,7 +3,6 @@ include TEMPLATEPATH . '/http_host.php';
 get_header(); 
 ?> 
 
-
 <!-- Header -->
 <header class="header-small bg-header-001 text-center text-light <?php echo $term_slug; ?>">
 	<h2>Welcome to Buffini & Company <?php echo ucwords($term_slug); ?></h2>
