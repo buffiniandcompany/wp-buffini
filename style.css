@@ -162,3 +162,6 @@ li a.search {
     background-size: 1.75rem auto;
     opacity: 0.5;
 }
+.comments-area{
+	display: none;
+}
