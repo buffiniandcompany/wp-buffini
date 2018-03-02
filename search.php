@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+?>
 
 <!-- Header -->
 <header class="header header-xsmall bg-gradient-blue">
@@ -22,9 +24,9 @@
 
         <!-- Search Results -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <div class="card">
+          <div class="">
             <a href="<?php the_permalink(); ?>">
-              <div class="card-section">
+              <div class="">
                 <h3><?php the_title(); ?></h3>
                 <p><?php echo strip_tags( get_the_excerpt() ); ?></p>
               </div>

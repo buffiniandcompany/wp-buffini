@@ -1,44 +1,56 @@
-<?php get_header(); ?>
+<?php
+include TEMPLATEPATH . '/http_host.php';
+get_header(); 
+?> 
+
 
 <!-- Header -->
-<header class="header-xsmall bg-gradient-blue">
-<h3><?php the_title(); ?>&nbsp;</h3>
+<header class="header-small bg-header-001 text-center text-light <?php echo $term_slug; ?>">
+	<h2>Welcome to Buffini & Company <?php echo ucwords($term_slug); ?></h2>
 </header>
 
-<!-- General Loop -->
+<!-- Nav -->
+<nav class="sub-nav-container">
+	<div id="subNav" class="sub-nav">
+		<!-- Sub-Nav -->
+		<?//php $term_name = apply_filters( 'single_term_title', $tax->name ); ?>
+		<?php 
+		
+		include STYLESHEETPATH  . '/nav_terms.php';
+		
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+			echo '<ul class="vertical large-horizontal menu align-center">';
+			foreach ( $terms as $term ) {	
+				echo '<li><a href="'. esc_url( get_term_link($term)) . '">' . $term->name . '</a></li>';
+				
+			}
+			echo '<li><a href="javascript:void(0);" class="search"  data-toggle="searchBox" aria-controls="searchBox">&nbsp;</a></li>';
+			echo '</ul>';
+		}
+		?>
+	</div>
+</nav>
 <!-- Main -->
-<main class="pt80 pb80">
-<div class="grid-x grid-padding-x align-center">
-  <div class="cell small-11 medium-9 large-8">
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <article class="post">                
-        <h1><?php the_title(); ?> <?php echo single_term_title(); ?></h1>
-        <ul class="post-meta no-bullet mb40">
-          <li class="cat">
-            <hr>
-            Posted on <?php the_time('F j, Y'); ?> in 
-            <?php the_category( ', ' ); ?>
-            <hr>
-          </li>
-        </ul>
-        <?php if( get_the_post_thumbnail() ) : ?>
-          <div class="mb40">
-            <?php the_post_thumbnail('large'); ?>
+<main class="grid-container pt80 pb80 <?php echo $term_slug; ?>">
+
+	<section>
+		<?php
+		include STYLESHEETPATH  . '/post_grid.php';
+		?>
+	</section>
+</main>
+<div class="tiny reveal" id="searchBox" data-reveal>
+<!-- Search Form -->
+        <form role="search" method="get" class="mb80" action="<?php echo home_url( '/' ); ?>">
+          <div class="input-group">
+            <input id="globalSearch" type="search" class="input-group-field" placeholder="Enter key words" value=" <?php echo esc_html( get_search_query( false ) ); ?>" name="s" title="Search for:" />
+            <div class="input-group-button">
+              <input type="submit" class="button" value="Search" />
+            </div>
           </div>
-        <?php endif; ?>   
-        <?php the_content(); ?>
-        <?php comments_template(); ?>
-      </article>
-    <?php endwhile; else : ?>
-    <h4 class="text-center mb40"><?php _e( 'Sorry, no posts found.' ); ?></h4>
-    <div class="text-center">
-      <a href="/" class="button large">Go to Home Page</a>
-    </div>
-    
-    <?php endif; ?>
-  </div>
-</section>
-</main>  
-
-
-<?php get_footer(); ?>
+        </form>
+<button class="close-button" data-close aria-label="Close reveal" type="button">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<?php get_footer();?>

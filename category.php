@@ -1,1 +1,1 @@
-<?php// include("taxonomy.php")?>
+<?php include("taxonomy.php")?>
