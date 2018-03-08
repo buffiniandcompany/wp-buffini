@@ -54,7 +54,7 @@
 				<?php echo $post_cat_name ;?>
 			</h3>
 		</div>
-		<div class="list grid-x grid-padding-x small-up-2 medium-up-2 large-up-3 pb30 mb30">
+		<div class="list grid-x grid-padding-x grid-padding-y small-up-2 medium-up-2 large-up-3 pb30 mb30">
 
 			<?php
 			$query1 = new WP_Query(
@@ -72,14 +72,16 @@
 
 			<div class="cell">
 				<div class="card">
-					<!-- Thumbnail -->
-					<div style="height:225px; overflow: hidden;position: relative;">
 						<?php if( get_the_post_thumbnail() ) : ?>
+						<div style="height:225px; overflow: hidden;position: relative;">
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail('large'); ?>
 						</a>
+						</div>
 						<?php endif; ?>
-					</div>
+						
+					<!-- Thumbnail -->
+					
 					<!-- Title / Excerpt -->
 					<div class="card-section">
 						<h6>

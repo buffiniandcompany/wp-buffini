@@ -165,3 +165,6 @@ li a.search {
 .comments-area{
 	display: none;
 }
+.card {
+	height: 100%;	
+}
