@@ -1,7 +1,6 @@
 <?php
 include TEMPLATEPATH . "/http_host.php";
 get_header(); ?>
-
 <?php
 $post_type = get_post_type();
 $tax = get_queried_object();
@@ -52,7 +51,7 @@ if ( $termlist->parent > 0 ) {
 		<nav id="subNavContainer" class="sub-nav-container sticky-container" data-sub-nav data-sticky-container>
 			<div class="sticky is-anchored is-at-top" data-sticky data-sticky-on="small" data-top-anchor="subNavContainer:top" data-margin-top="0">
 				<!-- Toggle for Small Screens -->
-				<div id="subNavLarge" class="sub-nav show-for-large">
+				<div id="subNavLarge" class="sub-nav">
 					<ul class="menu vertical large-horizontal align-center dropdown" data-responsive-menu="accordion large-dropdown" data-magellan data-offset="40" data-threshold="85">
 						<?php
 						if ( $termlist->parent > 0 ) {
