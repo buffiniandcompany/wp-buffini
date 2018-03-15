@@ -94,10 +94,6 @@ if ( $termlist->parent > 0 ) {
 				<div class="cell">
 					<div class="card">
 						<!-- Thumbnail -->
-<<<<<<< HEAD
-						
-=======
->>>>>>> 71d17ce26bcd0252dd62fd97f03d6357b296c14d
 							<?php if( get_the_post_thumbnail() ) : ?>
 							<div style="height:225px; overflow: hidden;position: relative;">
 							<a href="<?php the_permalink(); ?>">
