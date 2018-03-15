@@ -1,5 +1,5 @@
 <?php
-include TEMPLATEPATH . '/http_host.php';
+include TEMPLATEPATH . "/http_host.php";
 get_header(); 
 ?> 
 

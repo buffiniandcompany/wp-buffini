@@ -1,11 +1,12 @@
-<?php get_header(); ?>
-
+<?php
+include TEMPLATEPATH . "/http_host.php";
+get_header(); ?>
 <?php
 $post_type = get_post_type();
 $tax = get_queried_object();
 $taxonomy = $tax->taxonomy;
 $pageid = get_queried_object_id();
-$term_slug = get_queried_object()->slug;
+$term_slug2 = get_queried_object()->slug;
 $termlist = get_term_by( 'id', $pageid, $taxonomy );
 $excerpt = get_field( 'highlight' );
 
@@ -17,14 +18,14 @@ if ( $termlist->parent > 0 ) {
 		$header_title = "<span class='parent-name'>" . $parent_name . "</span><span class='m10 text-light-50'>|</span>";
 	}
 } else {
-	//single_term_title();
+	$header_title = "<span class='parent-name'>Buffini & Company</span><span class='m10 text-light-50'>|</span>";
 }
 ?>
 
 <div class="main">
 
 	<!-- Header -->
-	<header class="header header-small text-center <?php echo $term_slug; ?>">
+	<header class="header header-small text-center category <?php echo $term_slug2; ?>">
 		<section class="grid-x grid-padding-x align-center">
 			<div class="cell medium-7">
 				<h2>
@@ -41,7 +42,7 @@ if ( $termlist->parent > 0 ) {
 	</header>
 	<section>
 
-		<?php 
+<?php 
 	$term_name = apply_filters( 'single_term_title', $tax->name ); 
 ?>
 
@@ -50,7 +51,7 @@ if ( $termlist->parent > 0 ) {
 		<nav id="subNavContainer" class="sub-nav-container sticky-container" data-sub-nav data-sticky-container>
 			<div class="sticky is-anchored is-at-top" data-sticky data-sticky-on="small" data-top-anchor="subNavContainer:top" data-margin-top="0">
 				<!-- Toggle for Small Screens -->
-				<div id="subNavLarge" class="sub-nav show-for-large">
+				<div id="subNavLarge" class="sub-nav">
 					<ul class="menu vertical large-horizontal align-center dropdown" data-responsive-menu="accordion large-dropdown" data-magellan data-offset="40" data-threshold="85">
 						<?php
 						if ( $termlist->parent > 0 ) {
@@ -93,17 +94,19 @@ if ( $termlist->parent > 0 ) {
 				<div class="cell">
 					<div class="card">
 						<!-- Thumbnail -->
-						<div style="height:225px; overflow: hidden;position: relative;">
+						
 							<?php if( get_the_post_thumbnail() ) : ?>
+							<div style="height:225px; overflow: hidden;position: relative;">
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail('large'); ?>
 							</a>
+							</div>
 							<?php endif; ?>
-						</div>
+						
 						<!-- Title / Excerpt -->
 						<div class="card-section">
 							<h6>
-								<?php if($excerpt){ echo "";} else { the_time('F j, Y') ; }?>
+								<?php the_time('F j, Y') ;?>
 							</h6>
 							<a href="<?php the_permalink(); ?>">
 								<h4>
@@ -112,7 +115,7 @@ if ( $termlist->parent > 0 ) {
 							</a>
 							<hr>
 							<p>
-								<?php if ($excerpt) { echo $excerpt;} else { echo strip_tags( get_the_excerpt() );} ?>
+								<?php echo strip_tags( get_the_excerpt() );?>
 							</p>
 						</div>
 					</div>
